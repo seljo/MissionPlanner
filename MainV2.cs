@@ -1313,7 +1313,10 @@ namespace MissionPlanner
             }
         }
 
-        private bool joysendThreadExited = false;
+        /// <summary>
+        /// needs to be true by default so that exits properly if no joystick used.
+        /// </summary>
+        volatile private bool joysendThreadExited = true;
 
         /// <summary>
         /// thread used to send joystick packets to the MAV
